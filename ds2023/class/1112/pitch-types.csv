@@ -1,0 +1,17 @@
+pitch_type,pitch_desc,include
+CH,Changeup,1
+CU,Curveball,1
+EP,Eephus,0
+FC,Cutter,1
+FF,Four-seam Fastball,1
+FO,Pitchout (also PO),0
+FS,Splitter,1
+FT,Two-seam Fastball,1
+IN,Intentional ball,0
+KC,Knuckle curve,1
+KN,Knuckeball,1
+PO,Pitchout (also FO),0
+SC,Screwball,1
+SI,Sinker,1
+SL,Slider,1
+UN,Unknown,0

@@ -1,0 +1,515 @@
+% Options for packages loaded elsewhere
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  letterpaper,
+  DIV=11,
+  numbers=noendperiod]{scrartcl}
+\usepackage{xcolor}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+% Make \paragraph and \subparagraph free-standing
+\makeatletter
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}{
+    \@ifstar
+      \xxxParagraphStar
+      \xxxParagraphNoStar
+  }
+  \newcommand{\xxxParagraphStar}[1]{\oldparagraph*{#1}\mbox{}}
+  \newcommand{\xxxParagraphNoStar}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}{
+    \@ifstar
+      \xxxSubParagraphStar
+      \xxxSubParagraphNoStar
+  }
+  \newcommand{\xxxSubParagraphStar}[1]{\oldsubparagraph*{#1}\mbox{}}
+  \newcommand{\xxxSubParagraphNoStar}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+\makeatother
+
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{241,243,245}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.40,0.45,0.13}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\BuiltInTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\ExtensionTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.28,0.35,0.67}{#1}}
+\newcommand{\ImportTok}[1]{\textcolor[rgb]{0.00,0.46,0.62}{#1}}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.07,0.07,0.07}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+
+
+
+
+
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+
+
+ 
+
+
+\KOMAoption{captions}{tableheading}
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table of contents}
+\else
+  \newcommand\contentsname{Table of contents}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{List of Figures}
+\else
+  \newcommand\listfigurename{List of Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{List of Tables}
+\else
+  \newcommand\listtablename{List of Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Table}
+\else
+  \newcommand\tablename{Table}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={DS 2023 HW 6},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+
+\title{DS 2023 HW 6}
+\author{}
+\date{}
+\begin{document}
+\maketitle
+
+
+\subsection{Instructions}\label{instructions}
+
+Follow the prompts in this notebook.
+
+Make use of code provided.
+
+Respond with code to generate your answers. \textbar{} If asked to
+provide a specific response, create a Markdown cell after your code
+cell(s) with the response.
+
+NOTE: To save as a PDF, first export your notebook to HTML, open it in a
+brower, and the print the web page to PDF.
+
+\textbf{10 Points}
+
+\subsection{Student Info}\label{student-info}
+
+Write your name and computer ID below.
+
+\begin{itemize}
+\tightlist
+\item
+  NAME: Sae-Jin Moon
+\item
+  ID: rhn9qs
+\end{itemize}
+
+\subsection{Compliance with Homework Submission
+Guidelines}\label{compliance-with-homework-submission-guidelines}
+
+1 pt
+
+\subsection{Set Up}\label{set-up}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ImportTok{import}\NormalTok{ pandas }\ImportTok{as}\NormalTok{ pd}
+\ImportTok{import}\NormalTok{ numpy }\ImportTok{as}\NormalTok{ np}
+\ImportTok{import}\NormalTok{ matplotlib.pyplot }\ImportTok{as}\NormalTok{ plt}
+\ImportTok{import}\NormalTok{ seaborn }\ImportTok{as}\NormalTok{ sns}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{sns.set\_theme(style}\OperatorTok{=}\StringTok{\textquotesingle{}darkgrid\textquotesingle{}}\NormalTok{, context}\OperatorTok{=}\StringTok{\textquotesingle{}notebook\textquotesingle{}}\NormalTok{) }
+\end{Highlighting}
+\end{Shaded}
+
+Read in the data file as a data frame called \texttt{DOC}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{data\_src }\OperatorTok{=} \StringTok{"winereviews{-}DOC.csv"}
+\NormalTok{DOC }\OperatorTok{=}\NormalTok{ pd.read\_csv(data\_src, index\_col}\OperatorTok{=}\StringTok{\textquotesingle{}doc\_id\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{Tasks}\label{tasks}
+
+\subsubsection{Task 1}\label{task-1}
+
+1 pt
+
+Create a data frame called \texttt{COUNTRY} that contains a row for each
+distinct value in \texttt{doc\_country} and a column for the number of
+reviews (rows) associated with each country.
+
+Display the first \(5\) rows.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{COUNTRY }\OperatorTok{=}\NormalTok{ DOC[}\StringTok{\textquotesingle{}doc\_country\textquotesingle{}}\NormalTok{].value\_counts().to\_frame(}\StringTok{\textquotesingle{}count\textquotesingle{}}\NormalTok{)}
+\NormalTok{COUNTRY.head()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{longtable}[]{@{}ll@{}}
+\toprule\noalign{}
+& count \\
+doc\_country & \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+US & 54504 \\
+France & 22093 \\
+Italy & 19540 \\
+Spain & 6645 \\
+Portugal & 5691 \\
+\end{longtable}
+
+\subsubsection{Task 2}\label{task-2}
+
+1 pt
+
+Create a \textbf{count} plot showing the review count for each country,
+were the country names on the x-axis are \textbf{sorted} from highest to
+lowest counts and rotated \(90\degree\).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{plt.figure(figsize}\OperatorTok{=}\NormalTok{(}\DecValTok{12}\NormalTok{, }\DecValTok{6}\NormalTok{))}
+\NormalTok{sns.countplot(x}\OperatorTok{=}\StringTok{\textquotesingle{}doc\_country\textquotesingle{}}\NormalTok{, data}\OperatorTok{=}\NormalTok{DOC, order}\OperatorTok{=}\NormalTok{COUNTRY.index)}
+\NormalTok{plt.xticks(rotation}\OperatorTok{=}\DecValTok{90}\NormalTok{)}
+\NormalTok{plt.title(}\StringTok{\textquotesingle{}Review Count by Country\textquotesingle{}}\NormalTok{)}
+\NormalTok{plt.xlabel(}\StringTok{\textquotesingle{}Country\textquotesingle{}}\NormalTok{)}
+\NormalTok{plt.ylabel(}\StringTok{\textquotesingle{}Number of Reviews\textquotesingle{}}\NormalTok{)}
+\NormalTok{plt.show()}
+\end{Highlighting}
+\end{Shaded}
+
+\pandocbounded{\includegraphics[keepaspectratio]{hw6_files/figure-pdf/cell-6-output-1.png}}
+
+\subsubsection{Task 3}\label{task-3}
+
+1 pt
+
+By eye, what are the three most represented countries in the plot above,
+in desceding order of count?
+
+Write your answer as a comma separated list below.
+
+US, France, Italy
+
+\subsubsection{Task 4}\label{task-4}
+
+1 pt
+
+Create a box plot of the counts in the \texttt{COUNTRY} data frame.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{plt.figure(figsize}\OperatorTok{=}\NormalTok{(}\DecValTok{10}\NormalTok{, }\DecValTok{2}\NormalTok{))}
+\NormalTok{sns.boxplot(x}\OperatorTok{=}\NormalTok{COUNTRY[}\StringTok{"count"}\NormalTok{])}
+\NormalTok{plt.title(}\StringTok{\textquotesingle{}Distribution of Review Counts Across Countries\textquotesingle{}}\NormalTok{)}
+\NormalTok{plt.xlabel(}\StringTok{\textquotesingle{}Number of Reviews\textquotesingle{}}\NormalTok{)}
+\NormalTok{plt.show()}
+\end{Highlighting}
+\end{Shaded}
+
+\pandocbounded{\includegraphics[keepaspectratio]{hw6_files/figure-pdf/cell-7-output-1.png}}
+
+\subsubsection{Task 5}\label{task-5}
+
+1 pt
+
+Add two features to \texttt{COUNTRY}, one for the mean value of
+\texttt{doc\_points} and one for the \textbf{median} value of
+\texttt{doc\_price}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{country\_stats }\OperatorTok{=}\NormalTok{ DOC.groupby(}\StringTok{\textquotesingle{}doc\_country\textquotesingle{}}\NormalTok{).agg(}
+\NormalTok{    mean\_points}\OperatorTok{=}\NormalTok{(}\StringTok{\textquotesingle{}doc\_points\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}mean\textquotesingle{}}\NormalTok{),}
+\NormalTok{    median\_price}\OperatorTok{=}\NormalTok{(}\StringTok{\textquotesingle{}doc\_price\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}median\textquotesingle{}}\NormalTok{)}
+\NormalTok{)}
+\NormalTok{COUNTRY }\OperatorTok{=}\NormalTok{ COUNTRY.join(country\_stats)}
+\NormalTok{COUNTRY.head()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{longtable}[]{@{}llll@{}}
+\toprule\noalign{}
+& count & mean\_points & median\_price \\
+doc\_country & & & \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+US & 54504 & 88.563720 & 30.0 \\
+France & 22093 & 88.845109 & 25.0 \\
+Italy & 19540 & 88.562231 & 28.0 \\
+Spain & 6645 & 87.288337 & 18.0 \\
+Portugal & 5691 & 88.250220 & 16.0 \\
+\end{longtable}
+
+\subsubsection{Task 6}\label{task-6}
+
+1 pt
+
+Using the table you just created, create a scatter plot that compares
+median \texttt{doc\_price} to mean \texttt{doc\_points}.
+
+Use the pattern found in Wednesday's activity key to put country labels
+on each point.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{plt.figure(figsize}\OperatorTok{=}\NormalTok{(}\DecValTok{12}\NormalTok{, }\DecValTok{8}\NormalTok{))}
+\NormalTok{sns.scatterplot(data}\OperatorTok{=}\NormalTok{COUNTRY, x}\OperatorTok{=}\StringTok{\textquotesingle{}mean\_points\textquotesingle{}}\NormalTok{, y}\OperatorTok{=}\StringTok{\textquotesingle{}median\_price\textquotesingle{}}\NormalTok{)}
+
+\ControlFlowTok{for}\NormalTok{ i, row }\KeywordTok{in}\NormalTok{ COUNTRY.iterrows():}
+\NormalTok{    plt.annotate(i, (row[}\StringTok{\textquotesingle{}mean\_points\textquotesingle{}}\NormalTok{], row[}\StringTok{\textquotesingle{}median\_price\textquotesingle{}}\NormalTok{]), xytext}\OperatorTok{=}\NormalTok{(}\DecValTok{3}\NormalTok{, }\DecValTok{3}\NormalTok{), textcoords}\OperatorTok{=}\StringTok{\textquotesingle{}offset points\textquotesingle{}}\NormalTok{)}
+
+
+\NormalTok{plt.title(}\StringTok{\textquotesingle{}Median Price vs. Mean Points by Country\textquotesingle{}}\NormalTok{)}
+\NormalTok{plt.xlabel(}\StringTok{\textquotesingle{}Mean Points\textquotesingle{}}\NormalTok{)}
+\NormalTok{plt.ylabel(}\StringTok{\textquotesingle{}Median Price\textquotesingle{}}\NormalTok{)}
+\NormalTok{plt.show()}
+\end{Highlighting}
+\end{Shaded}
+
+\pandocbounded{\includegraphics[keepaspectratio]{hw6_files/figure-pdf/cell-9-output-1.png}}
+
+\subsubsection{Task 7}\label{task-7}
+
+1 pt
+
+Which country stands out as having the highest x and y values?
+
+England
+
+\subsubsection{Task 8}\label{task-8}
+
+1 pt
+
+Create a wide data frame called \texttt{TASTER\_COUNTRY} with the
+following properties:
+
+\begin{itemize}
+\tightlist
+\item
+  axis \(0\) contains the domain of \texttt{doc\_taster}
+\item
+  axis \(1\) contains the domain of \texttt{doc\_country}
+\item
+  cells contain counts for the co-occurrence of \texttt{doc\_taster} and
+  \texttt{doc\_country}
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{TASTER\_COUNTRY }\OperatorTok{=}\NormalTok{ pd.crosstab(DOC[}\StringTok{\textquotesingle{}doc\_taster\textquotesingle{}}\NormalTok{], DOC[}\StringTok{\textquotesingle{}doc\_country\textquotesingle{}}\NormalTok{])}
+\NormalTok{TASTER\_COUNTRY.head()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{longtable}[]{@{}llllllllllllllllllllll@{}}
+\toprule\noalign{}
+doc\_country & Argentina & Armenia & Australia & Austria & Bosnia and
+Herzegovina & Brazil & Bulgaria & Canada & Chile & China & ... & Serbia
+& Slovakia & Slovenia & South Africa & Spain & Switzerland & Turkey & US
+& Ukraine & Uruguay \\
+doc\_taster & & & & & & & & & & & & & & & & & & & & & \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Alexander Peartree & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & ... & 0 & 0
+& 0 & 0 & 0 & 0 & 0 & 415 & 0 & 0 \\
+Anna Lee C. Iijima & 0 & 0 & 0 & 0 & 1 & 0 & 19 & 15 & 0 & 0 & ... & 0 &
+1 & 26 & 0 & 0 & 0 & 5 & 2435 & 2 & 0 \\
+Anne Krebiehl~MW & 0 & 0 & 0 & 2207 & 0 & 0 & 0 & 0 & 0 & 0 & ... & 0 &
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+Carrie Dykes & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & ... & 0 & 0 & 0 &
+0 & 0 & 0 & 0 & 139 & 0 & 0 \\
+Christina Pickard & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & ... & 0 & 0
+& 0 & 0 & 0 & 0 & 0 & 5 & 0 & 0 \\
+\end{longtable}
+
+\subsubsection{Task 9}\label{task-9}
+
+1 pt
+
+Create a data frame \texttt{LATIN} by executing the code below.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{latin\_countries }\OperatorTok{=} \StringTok{"Uruguay Argentina Chile Brazil Peru Mexico Spain"}\NormalTok{.split()}
+\NormalTok{LATIN }\OperatorTok{=}\NormalTok{ TASTER\_COUNTRY[latin\_countries].stack().to\_frame(}\StringTok{\textquotesingle{}count\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Create a bar plot with \texttt{LATIN} that compares \texttt{doc\_taster}
+and \texttt{count}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# ADD CODE HERE}
+\NormalTok{LATIN\_for\_plot }\OperatorTok{=}\NormalTok{ LATIN.loc[LATIN[}\StringTok{\textquotesingle{}count\textquotesingle{}}\NormalTok{] }\OperatorTok{\textgreater{}} \DecValTok{0}\NormalTok{].reset\_index()}
+
+\NormalTok{plt.figure(figsize}\OperatorTok{=}\NormalTok{(}\DecValTok{12}\NormalTok{, }\DecValTok{7}\NormalTok{))}
+\NormalTok{sns.barplot(data}\OperatorTok{=}\NormalTok{LATIN\_for\_plot, x}\OperatorTok{=}\StringTok{\textquotesingle{}doc\_taster\textquotesingle{}}\NormalTok{, y}\OperatorTok{=}\StringTok{\textquotesingle{}count\textquotesingle{}}\NormalTok{, hue}\OperatorTok{=}\StringTok{\textquotesingle{}doc\_country\textquotesingle{}}\NormalTok{)}
+\NormalTok{plt.xticks(rotation}\OperatorTok{=}\DecValTok{90}\NormalTok{)}
+\NormalTok{plt.title(}\StringTok{\textquotesingle{}Review Counts for Latin Countries by Taster\textquotesingle{}}\NormalTok{)}
+\NormalTok{plt.xlabel(}\StringTok{\textquotesingle{}Taster\textquotesingle{}}\NormalTok{)}
+\NormalTok{plt.ylabel(}\StringTok{\textquotesingle{}Number of Reviews\textquotesingle{}}\NormalTok{)}
+\NormalTok{plt.tight\_layout()}
+\NormalTok{plt.show()}
+\end{Highlighting}
+\end{Shaded}
+
+\pandocbounded{\includegraphics[keepaspectratio]{hw6_files/figure-pdf/cell-12-output-1.png}}
+
+How many tasters appear to be significantly involved with writing
+reviews about the countries in \texttt{LATIN}?
+
+Michael Schachner is the most significantly involved with writing
+reviews about the countries in \texttt{LATIN}.
+
+
+
+
+\end{document}

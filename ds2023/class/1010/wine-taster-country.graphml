@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns
+         http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+<!-- Created by igraph -->
+  <key id="v_label" for="node" attr.name="label" attr.type="string"/>
+  <key id="v_count" for="node" attr.name="count" attr.type="double"/>
+  <key id="v_node_type" for="node" attr.name="node_type" attr.type="string"/>
+  <key id="e_weight" for="edge" attr.name="weight" attr.type="double"/>
+  <graph id="G" edgedefault="undirected">
+    <node id="n0">
+      <data key="v_label">US</data>
+      <data key="v_count">31904</data>
+      <data key="v_node_type">doc_country</data>
+    </node>
+    <node id="n1">
+      <data key="v_label">Roger Voss</data>
+      <data key="v_count">14629</data>
+      <data key="v_node_type">doc_taster</data>
+    </node>
+    <node id="n2">
+      <data key="v_label">France</data>
+      <data key="v_count">13773</data>
+      <data key="v_node_type">doc_country</data>
+    </node>
+    <node id="n3">
+      <data key="v_label">Michael Schachner</data>
+      <data key="v_count">10071</data>
+      <data key="v_node_type">doc_taster</data>
+    </node>
+    <node id="n4">
+      <data key="v_label">Virginie Boone</data>
+      <data key="v_count">8507</data>
+      <data key="v_node_type">doc_taster</data>
+    </node>
+    <node id="n5">
+      <data key="v_label">Paul Gregutt</data>
+      <data key="v_count">8262</data>
+      <data key="v_node_type">doc_taster</data>
+    </node>
+    <node id="n6">
+      <data key="v_label">Italy</data>
+      <data key="v_count">6460</data>
+      <data key="v_node_type">doc_country</data>
+    </node>
+    <node id="n7">
+      <data key="v_label">Kerin O’Keefe</data>
+      <data key="v_count">6298</data>
+      <data key="v_node_type">doc_taster</data>
+    </node>
+    <node id="n8">
+      <data key="v_label">Matt Kettmann</data>
+      <data key="v_count">5173</data>
+      <data key="v_node_type">doc_taster</data>
+    </node>
+    <node id="n9">
+      <data key="v_label">Sean P. Sullivan</data>
+      <data key="v_count">4215</data>
+      <data key="v_node_type">doc_taster</data>
+    </node>
+    <node id="n10">
+      <data key="v_label">Joe Czerwinski</data>
+      <data key="v_count">3624</data>
+      <data key="v_node_type">doc_taster</data>
+    </node>
+    <node id="n11">
+      <data key="v_label">Anna Lee C. Iijima</data>
+      <data key="v_count">3582</data>
+      <data key="v_node_type">doc_taster</data>
+    </node>
+    <node id="n12">
+      <data key="v_label">Chile</data>
+      <data key="v_count">3472</data>
+      <data key="v_node_type">doc_country</data>
+    </node>
+    <node id="n13">
+      <data key="v_label">Jim Gordon</data>
+      <data key="v_count">3358</data>
+      <data key="v_node_type">doc_taster</data>
+    </node>
+    <node id="n14">
+      <data key="v_label">Spain</data>
+      <data key="v_count">3350</data>
+      <data key="v_node_type">doc_country</data>
+    </node>
+    <node id="n15">
+      <data key="v_label">Argentina</data>
+      <data key="v_count">3132</data>
+      <data key="v_node_type">doc_country</data>
+    </node>
+    <node id="n16">
+      <data key="v_label">Portugal</data>
+      <data key="v_count">2554</data>
+      <data key="v_node_type">doc_country</data>
+    </node>
+    <node id="n17">
+      <data key="v_label">Anne Krebiehl MW</data>
+      <data key="v_count">2430</data>
+      <data key="v_node_type">doc_taster</data>
+    </node>
+    <node id="n18">
+      <data key="v_label">Austria</data>
+      <data key="v_count">2025</data>
+      <data key="v_node_type">doc_country</data>
+    </node>
+    <node id="n19">
+      <data key="v_label">Germany</data>
+      <data key="v_count">1846</data>
+      <data key="v_node_type">doc_country</data>
+    </node>
+    <node id="n20">
+      <data key="v_label">New Zealand</data>
+      <data key="v_count">1245</data>
+      <data key="v_node_type">doc_country</data>
+    </node>
+    <node id="n21">
+      <data key="v_label">Australia</data>
+      <data key="v_count">1061</data>
+      <data key="v_node_type">doc_country</data>
+    </node>
+    <node id="n22">
+      <data key="v_label">Lauren Buzzeo</data>
+      <data key="v_count">1061</data>
+      <data key="v_node_type">doc_taster</data>
+    </node>
+    <node id="n23">
+      <data key="v_label">South Africa</data>
+      <data key="v_count">783</data>
+      <data key="v_node_type">doc_country</data>
+    </node>
+    <node id="n24">
+      <data key="v_label">Susan Kostrzewa</data>
+      <data key="v_count">395</data>
+      <data key="v_node_type">doc_taster</data>
+    </node>
+    <edge source="n1" target="n2">
+      <data key="e_weight">11450</data>
+    </edge>
+    <edge source="n0" target="n4">
+      <data key="e_weight">8507</data>
+    </edge>
+    <edge source="n0" target="n5">
+      <data key="e_weight">8223</data>
+    </edge>
+    <edge source="n6" target="n7">
+      <data key="e_weight">6298</data>
+    </edge>
+    <edge source="n0" target="n8">
+      <data key="e_weight">5172</data>
+    </edge>
+    <edge source="n0" target="n9">
+      <data key="e_weight">4215</data>
+    </edge>
+    <edge source="n3" target="n12">
+      <data key="e_weight">3449</data>
+    </edge>
+    <edge source="n0" target="n13">
+      <data key="e_weight">3358</data>
+    </edge>
+    <edge source="n3" target="n14">
+      <data key="e_weight">3344</data>
+    </edge>
+    <edge source="n3" target="n15">
+      <data key="e_weight">3132</data>
+    </edge>
+    <edge source="n1" target="n16">
+      <data key="e_weight">2545</data>
+    </edge>
+    <edge source="n0" target="n11">
+      <data key="e_weight">2063</data>
+    </edge>
+    <edge source="n11" target="n19">
+      <data key="e_weight">1519</data>
+    </edge>
+    <edge source="n17" target="n18">
+      <data key="e_weight">1464</data>
+    </edge>
+    <edge source="n10" target="n20">
+      <data key="e_weight">1245</data>
+    </edge>
+    <edge source="n10" target="n21">
+      <data key="e_weight">1061</data>
+    </edge>
+    <edge source="n2" target="n17">
+      <data key="e_weight">966</data>
+    </edge>
+    <edge source="n2" target="n10">
+      <data key="e_weight">831</data>
+    </edge>
+    <edge source="n22" target="n23">
+      <data key="e_weight">565</data>
+    </edge>
+    <edge source="n1" target="n18">
+      <data key="e_weight">561</data>
+    </edge>
+    <edge source="n2" target="n22">
+      <data key="e_weight">476</data>
+    </edge>
+    <edge source="n10" target="n19">
+      <data key="e_weight">327</data>
+    </edge>
+    <edge source="n23" target="n24">
+      <data key="e_weight">201</data>
+    </edge>
+    <edge source="n0" target="n24">
+      <data key="e_weight">194</data>
+    </edge>
+    <edge source="n0" target="n10">
+      <data key="e_weight">89</data>
+    </edge>
+    <edge source="n3" target="n6">
+      <data key="e_weight">65</data>
+    </edge>
+    <edge source="n0" target="n3">
+      <data key="e_weight">64</data>
+    </edge>
+    <edge source="n1" target="n6">
+      <data key="e_weight">55</data>
+    </edge>
+    <edge source="n6" target="n10">
+      <data key="e_weight">40</data>
+    </edge>
+    <edge source="n2" target="n5">
+      <data key="e_weight">33</data>
+    </edge>
+    <edge source="n10" target="n12">
+      <data key="e_weight">22</data>
+    </edge>
+    <edge source="n0" target="n22">
+      <data key="e_weight">18</data>
+    </edge>
+    <edge source="n1" target="n23">
+      <data key="e_weight">17</data>
+    </edge>
+    <edge source="n2" target="n3">
+      <data key="e_weight">17</data>
+    </edge>
+    <edge source="n10" target="n16">
+      <data key="e_weight">8</data>
+    </edge>
+    <edge source="n5" target="n14">
+      <data key="e_weight">4</data>
+    </edge>
+    <edge source="n5" target="n6">
+      <data key="e_weight">2</data>
+    </edge>
+    <edge source="n16" target="n22">
+      <data key="e_weight">1</data>
+    </edge>
+    <edge source="n14" target="n22">
+      <data key="e_weight">1</data>
+    </edge>
+    <edge source="n8" target="n12">
+      <data key="e_weight">1</data>
+    </edge>
+    <edge source="n10" target="n14">
+      <data key="e_weight">1</data>
+    </edge>
+    <edge source="n0" target="n1">
+      <data key="e_weight">1</data>
+    </edge>
+  </graph>
+</graphml>

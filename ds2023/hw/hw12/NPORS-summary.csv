@@ -1,0 +1,87 @@
+category,demographic,republican,democrat,independant,other,rep_lean_rep,dem_lean_dem
+1,All RVs,32,33,25,8,48,49
+2,Men,33,29,29,9,52,46
+2,Women,31,37,22,8,44,51
+3,"White, non-Hispanic",40,27,26,7,56,41
+3,Hispanic,21,41,26,11,35,61
+3,"Black, non-Hispanic",4,65,20,9,12,83
+3,Asian*,25,42,26,7,35,63
+4,White men,40,23,30,7,60,39
+4,White women,40,31,22,6,53,43
+4,Hispanic men,23,40,26,11,39,61
+4,Hispanic women,20,42,25,11,32,60
+4,Black men,4,60,27,8,15,81
+4,Black women,4,69,16,9,10,84
+4,Asian men*,29,39,24,9,39,61
+4,Asian women*,23,47,26,5,33,64
+5,College degree or more,27,37,28,7,42,55
+5,No college degree,35,31,24,9,51,45
+5,Postgraduate degree,25,42,27,6,37,61
+5,College degree,29,34,28,8,46,51
+5,Some college,32,29,28,10,50,45
+5,High school or less,39,33,20,7,52,44
+6,"White, non-Hispanic, college degree or more",31,34,28,6,47,51
+6,"White, non-Hispanic, no college degree",46,22,24,7,63,33
+6,"Hispanic, college degree or more",21,46,23,10,35,63
+6,"Hispanic, no college degree",21,39,27,12,35,60
+6,"Black, non-Hispanic, college degree or more",6,56,29,9,14,79
+6,"Black, non-Hispanic, no college degree",3,70,17,8,11,85
+6,"Asian, non-Hispanic, college degree or more",20,46,28,6,31,67
+6,"Asian, non-Hispanic, no college degree*,**",35,35,22,8,42,57
+7,"Men, college degree or more",29,30,33,7,48,50
+7,"Women, college degree or more",26,44,23,7,37,60
+7,"Men, no college degree",36,29,26,9,54,44
+7,"Women, no college degree",35,33,22,8,49,45
+8,18-29,14,39,29,17,32,64
+8,30-49,28,33,26,12,45,52
+8,50-64,37,32,24,6,52,44
+8,65+,39,33,24,3,53,44
+9,Men ages 18-29,14,38,30,18,36,62
+9,Women ages 18-29,16,42,28,14,30,65
+9,Men ages 30-49,28,30,30,12,47,52
+9,Women ages 30-49,27,36,23,12,42,53
+9,Men ages 50-64,39,26,28,6,57,41
+9,Women ages 50-64,35,37,20,6,47,48
+9,Men ages 65+,42,28,27,3,59,39
+9,Women ages 65+,37,37,22,3,48,49
+10,Born in the 1940s,39,34,24,2,54,43
+10,Born in the 1950s,38,32,25,4,52,44
+10,Born in the 1960s,37,33,23,6,50,45
+10,Born in the 1970s,33,32,26,9,49,48
+10,Born in the 1980s,27,32,27,13,44,52
+10,Born in the 1990s,17,38,28,17,35,62
+11,White evangelical Protestant,63,7,23,6,85,14
+11,White nonevangelical Protestant,43,27,25,4,58,39
+11,Black Protestant,4,68,19,7,11,84
+11,All Catholic,36,32,26,5,52,44
+11,White Catholic,44,25,27,4,61,37
+11,Hispanic Catholic,21,49,23,6,35,60
+11,Latter-day Saint (Mormon)**,55,15,22,6,75,23
+11,Jewish,19,55,23,2,29,69
+11,Muslim***,15,35,34,15,32,66
+11,Unaffiliated,14,44,29,13,27,70
+12,Attends monthly or more,45,24,24,6,62,34
+12,Attends less often,26,38,26,9,41,56
+13,Urban,24,42,24,8,37,60
+13,Suburban,34,31,27,8,50,47
+13,Rural,43,25,23,9,60,35
+14,Veterans,42,21,29,7,63,35
+14,Non-veterans,31,35,25,8,46,51
+15,Union members,26,41,24,8,39,59
+15,Not union members,33,32,26,8,49,48
+16,Homeowners,36,30,26,8,51,45
+16,Renters,19,45,25,10,32,64
+17,Lower income,24,41,23,11,36,58
+17,Lower-middle income,29,34,25,12,46,50
+17,Middle income,35,32,25,7,51,48
+17,Upper-middle income,36,32,26,6,52,46
+17,Upper income,32,32,29,7,46,53
+18,Married,38,28,26,7,55,42
+18,Live with partner,20,41,28,10,35,62
+18,Divorced/Separated,31,39,22,6,44,52
+18,Widowed,38,33,24,4,48,47
+18,Never married,17,44,25,14,31,66
+19,Parent to child under 18,31,31,26,10,50,47
+19,Non-parent,26,37,26,10,41,56
+20,Straight,34,32,25,8,51,46
+20,"Gay, lesbian or bisexual",9,54,26,11,14,84
