@@ -36,6 +36,25 @@ def _(df, pd):
 
 
 @app.cell
+def _(df):
+    df.loc[df["Price"] < 350, :]
+    return
+
+
+@app.cell
+def _(df):
+    df.loc[:, ["Price", "Zipcode"]]
+    return
+
+
+@app.cell
+def _(df):
+    df.to_csv("./data/mod/airbnb.csv", index=False)
+    df.to_parquet("./data/mod/airbnb.parquet", index=False, engine="fastparquet")
+    return
+
+
+@app.cell
 def _(pd):
     gifts = pd.read_csv("./data/ForeignGifts_edu.csv")
     gifts.head()

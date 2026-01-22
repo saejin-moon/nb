@@ -1,6 +1,6 @@
 import marimo
 
-__generated_with = "0.19.2"
+__generated_with = "0.19.4"
 app = marimo.App()
 
 
@@ -102,22 +102,23 @@ def _():
 
 
 @app.cell
-def _():
+def _(u):
     # TODO: print the first and second elements of u (remember Python is 0-indexed)
 
     # arrays can be indexed using brackets, Python indexing starts at 0
-    print()
-    print()
+    print(u[0])
+    print(u[1])
     return
 
 
 @app.cell
-def _():
+def _(u):
     # numpy has a linear algebra sub module that we can use for linear algebra computation
     # the documentation can be found at: https://numpy.org/doc/stable/reference/routines.linalg.html
     from numpy import linalg as LA
 
     # calculate the norm of our vector u
+    LA.norm(u)
     # TODO: compute ||u||_2 using numpy.linalg
     return (LA,)
 
@@ -127,7 +128,7 @@ def _(mo):
     mo.md(r"""
     ### Sanity Check: Does this answer match with what you get using the formula for the Norm?
 
-    Hint: $ ||u||_2 = \sqrt{\sum_{i = 1}^{d}u_i^2}$
+    Hint: $||u||_2 = \sqrt{\sum_{i = 1}^{d}u_i^2}$
     """)
     return
 
@@ -187,9 +188,8 @@ def _(mo):
 
     For a vector $u = (u_1, u_2, \dots, u_d)$ and $p \ge 1$, the $p$-norm is defined as
 
-    $$
-    \|u\|_p = \left( \sum_{i=1}^{d} |u_i|^p \right)^{1/p}.
-    $$
+    $$\|u\|_p = \left( \sum_{i=1}^{d} |u_i|^p \right)^{1/p}.$$
+
     As $p \to \infty$, the $p$-norm converges to the infinity norm:
 
     $$
@@ -212,20 +212,16 @@ def _(mo):
     $$
 
     In ordinary Euclidean geometry, the set of points at distance $r$ from the origin is a **circle**:
-    $$
-    \{x \in \mathbb{R}^2 : \|x\|_2 = r\}.
-    $$
+
+    \[\{x \in \mathbb{R}^2 : \|x\|_2 = r\}\]
 
     But if we change the norm, the “circle” changes shape. For $p \ge 1$:
 
-    $$
-    \|x\|_p = \left(|x_1|^p + |x_2|^p\right)^{1/p}.
-    $$
+    \[\|x\|_p = \left(|x_1|^p + |x_2|^p\right)^{1/p}.\]
 
     We will plot **iso-distance contours** (level sets) for several $p$ values:
-    $$
-    \{(x_1,x_2) : \|(x_1,x_2)\|_p = r\}.
-    $$
+
+    \[\{(x_1,x_2) : \|(x_1,x_2)\|_p = r\}.\]
 
     **Key idea:** changing $p$ changes what “equally far” means.
 
@@ -235,6 +231,8 @@ def _(mo):
 
     This matters for the rest of the notebook because “closeness” between data points (and later, model penalties)
     depends on the choice of norm.
+
+    **note**: $\text{min}(L) + \lambda\Omega(x)$ where $L$ is loss.
     """)
     return
 
@@ -329,6 +327,8 @@ def _(np):
     # we can add two vectors
     # TODO: compute v + w and print it
     w_1 = np.array([0, 1, 0, 1])
+
+    print(v_1 + w_1)
     return (w_1,)
 
 
@@ -352,15 +352,16 @@ def _(np):
 
     # printing Euclidean distance
     print(dist)
-    return
+    return (dist,)
 
 
 @app.cell
-def _(np):
+def _(dist, np):
     # Sanity check
     our_dist = np.sqrt((1-1)**2 + (2-1)**2 + (3-1)**2)
 
     # TODO: confirm it matches the norm-based computation
+    dist == our_dist
     return
 
 
@@ -384,6 +385,8 @@ def _(np):
     # we can also use np.vstack and np.hstack
     # TODO:  use np.vstack and np.hstack
     print(X_2.shape)
+    # print(np.vstack(u_1, v_2))
+    # print(np.hstack(u_1, v_2))
     return u_1, v_2
 
 
@@ -461,14 +464,10 @@ def _(mo):
     i.e. We can multiply a 2x3 matrix with a 3x4, but we cannot multiply a 3x4 matrix with a 2x3 matrix.
 
     A valid matrix multiplication:
-    $$
-    \displaystyle A_{2x3}B_{3x4}
-    $$
+    $\displaystyle A_{2x3}B_{3x4}$
 
     A not valid matrix mutlilication:
-    $$
-    \displaystyle B_{3x4}A_{2x3}
-    $$
+    $\displaystyle B_{3x4}A_{2x3}$
     """)
     return
 
@@ -492,7 +491,7 @@ def _(V, np):
 
 
 @app.cell
-def _(UV, VU, np):
+def _(V, np):
     # how about matrix multiplication?
     # define a valid matrix
     U = np.array(
@@ -508,7 +507,8 @@ def _(UV, VU, np):
     # use matmul again
 
     # TODO: compute U @ V and V @ U
-
+    UV = np.matmul(U, V)
+    VU = np.matmul(V, U)
     print('U dot V', '\n', UV, '\n')
     print('V dot U', '\n', VU)
     return
@@ -557,8 +557,9 @@ def _(mo):
 
 
 @app.cell
-def _():
+def _(A, LA, np):
     # TODO: verify it matches sqrt(2)
+    LA.norm(A) == np.sqrt(2)
     return
 
 
@@ -573,47 +574,58 @@ def _(mo):
 
 
 @app.cell
-def _(np, plt, y):
-    _x = np.linspace(-2, 2, 100)
-    plt.plot(_x, y, c='k')
+def _(np, plt):
+    x = np.linspace(-2, 2, 100)
+    y = x ** 2
+    plt.plot(x, y, c='k')
     plt.ylim(-0.25, 4.25)
     plt.xlabel('X')
     plt.ylabel('Y')
     plt.title('Parabola ($f(x) = x^2$)')
     plt.show()
+    return (x,)
+
+
+@app.cell
+def _(np, plt, x):
+    def _():
+        # create the values for x and calcualte the y values using the exponential function
+        _x = np.linspace(-2, 2, 100)
+        # TODO: compute y = exp(x)
+        y = np.exp(x)
+        plt.plot(_x, y, c='k')
+        # plot them, c = 'k' means color of the line is black
+        plt.ylim(-0.25, 4.25)
+        plt.xlabel('X')
+        plt.ylabel('Y')
+        # optional: Titles
+        plt.title('Exponential Curve (f(x) = $e^{x}$)')
+        return plt.show()
+
+
+    _()
     return
 
 
 @app.cell
-def _(np, plt, y):
-    # create the values for x and calcualte the y values using the exponential function
-    _x = np.linspace(-2, 2, 100)
-    # TODO: compute y = exp(x)
-    plt.plot(_x, y, c='k')
-    # plot them, c = 'k' means color of the line is black
-    plt.ylim(-0.25, 4.25)
-    plt.xlabel('X')
-    plt.ylabel('Y')
-    # optional: Titles
-    plt.title('Exponential Curve (f(x) = $e^{x}$)')
-    plt.show()
-    return
+def _(np, plt):
+    def _():
+        _x = np.linspace(-2, 2, 100)
+        y = ((_x + 1) ** 2) * (_x - 1) ** 2
+        plt.plot(_x, y, c='k')
+        # create a new function
+        # TODO: compute y = (x+1)^2 (x-1)^2
+        plt.ylim(-0.25, 4.25)
+        plt.xlabel('X')
+        plt.ylabel('Y')
+        plt.title('$f(x) = (x + 1)^2 (x-1)^2$')
+        # optional: Titles
+        # Tip: You can use latex in titles if you
+        # place it in string formatted as r''
+        return plt.show()
 
 
-@app.cell
-def _(np, plt, y):
-    _x = np.linspace(-2, 2, 100)
-    plt.plot(_x, y, c='k')
-    # create a new function
-    # TODO: compute y = (x+1)^2 (x-1)^2
-    plt.ylim(-0.25, 4.25)
-    plt.xlabel('X')
-    plt.ylabel('Y')
-    plt.title('$f(x) = (x + 1)^2 (x-1)^2$')
-    # optional: Titles
-    # Tip: You can use latex in titles if you
-    # place it in string formatted as r''
-    plt.show()
+    _()
     return
 
 
@@ -631,8 +643,6 @@ def _(mo):
 def _():
     # Import sympy package
     import sympy
-    # Makes sympy formatted nicely
-    sympy.init_printing(use_unicode=True)
     from IPython.display import display
     return (sympy,)
 
