@@ -6,6 +6,9 @@ dist/
 wheels/
 *.egg-info
 
+# these just hate me.
+*.ipynb
+
 # Virtual environments
 .venv
 

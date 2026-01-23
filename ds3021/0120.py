@@ -69,6 +69,13 @@ def _(gifts):
 
 
 @app.cell
+def _(gitfs):
+    import seaborn as sns
+    sns.kdeplot(gitfs["Foreign Gift Amount"])
+    return
+
+
+@app.cell
 def _():
     import marimo as mo
     return
