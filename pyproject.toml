@@ -6,10 +6,14 @@ readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
     "fastparquet>=2025.12.0",
-    "marimo[pdf]>=0.19.2",
+    "ipykernel>=7.1.0",
+    "marimo>=0.19.6",
+    "nbconvert>=7.17.0",
     "nbformat>=5.10.4",
     "numpy>=2.4.1",
+    "plotly>=6.5.2",
     "ruff>=0.14.13",
     "seaborn>=0.13.2",
     "sympy>=1.14.0",
+    "xlrd>=2.0.2",
 ]
