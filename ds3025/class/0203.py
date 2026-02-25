@@ -1,6 +1,6 @@
 import marimo
 
-__generated_with = "0.19.7"
+__generated_with = "0.19.9"
 app = marimo.App(width="full")
 
 with app.setup:
@@ -15,10 +15,11 @@ def _():
     return
 
 
-@app.cell
+@app.cell(hide_code=True)
 def _():
     mo.md(r"""
     ## markov
+
     \[
     P(x>\beta) < \frac{E(x)}{\beta} \space \text{for} \space x \ge 0 \space \text{and} \space \beta > 0 \\
     E(x) = \int_{0}^{+\infty} xf(x)dx = \int_{0}^{\beta} xf(x)dx + \int_{\beta}^{+\infty} xf(x)dx > \int_{\beta}^{+\infty} xf(x)dx > \int_{\beta}^{+\infty} \beta f(x)dx = \beta\int_{\beta}^{+\infty} f(x)dx  = \beta P(x \ge \beta) \\
@@ -35,6 +36,7 @@ def _():
 def _():
     mo.md(r"""
     ## chebyshev
+
     \[
     P(|x - E(x)| > \alpha) \le \frac{\text{Var}(x)}{\alpha^2} \\
     \]

@@ -1,2 +1,2 @@
-import sympy
-print(sympy.Matrix)
+import numpy as np
+print(np)
